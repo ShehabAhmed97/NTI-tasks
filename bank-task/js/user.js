@@ -35,6 +35,7 @@ const setCurrentIdToStorage = (myData) => {
 
 
 const content= document.querySelector("#content")
+const single = document.querySelector("#single")
 const addUser = document.querySelector('#addUser')
 
 let currentId = getCurrentIdFromStorage();
@@ -87,21 +88,20 @@ drawItems = () =>{
      usersData.forEach((user, i)=>{
       const tr = createMyOwnElement('tr',content)
       userMainHeads.forEach( head => {
-          if(head.name == "transactions"){
-              let transactions = ''
-              user[head.name].forEach(transaction => transactions += `${transaction.action} : ${transaction.amount}<br>` )
-              createMyOwnElement('td', tr,"", transactions)
-          }else{
+          if(head.name !== "transactions"){
             createMyOwnElement('td', tr,"", user[head.name])
           }
         })
       const td = createMyOwnElement('td',tr)
-      const delBtn = createMyOwnElement('button', td, "btn btn-danger mx-3", "delete")
-      delBtn.addEventListener('click', ()=> deleteUser(usersData, user.accNum))
-      const depositBtn = createMyOwnElement('button', td, "btn btn-primary mx-3", "Deposit")
+      const showBtn = createMyOwnElement('button', td, "btn btn-primary mx-3", "Show")
+      showBtn.addEventListener('click', (e)=> show(user, i))
+      const depositBtn = createMyOwnElement('button', td, "btn btn-dark mx-3", "Deposit")
       depositBtn.addEventListener('click', (e)=> deposit(i))
       const withdrawBtn = createMyOwnElement('button', td, "btn btn-secondary mx-3", "Withdraw")
       withdrawBtn.addEventListener('click', (e)=> withdraw(i))
+      const delBtn = createMyOwnElement('button', td, "btn btn-danger mx-3", "delete")
+      delBtn.addEventListener('click', ()=> deleteUser(usersData, user.accNum))
+
     })    
     }
 }
@@ -109,38 +109,40 @@ drawItems = () =>{
 
 if(content) drawItems()
 
+if(single){
+    single.innerHTML = ''
+    let user = JSON.parse(localStorage.getItem("user"))
+    const tr = createMyOwnElement('tr',single)
+    userMainHeads.forEach( head => {
+        if(head.name == "transactions"){
+            let transactions = ''
+            user[head.name].forEach(transaction => transactions += `${transaction.action} : ${transaction.amount}<br>` )
+            createMyOwnElement('td', tr,"", transactions)
+        }else{
+          createMyOwnElement('td', tr,"", user[head.name])
+        }
+      })
+    const td = createMyOwnElement('td',tr)
+    const depositBtn = createMyOwnElement('button', td, "btn btn-primary mx-3", "Deposit")
+    depositBtn.addEventListener('click', (e)=> deposit(localStorage.getItem("selectedIndex")))
+    const withdrawBtn = createMyOwnElement('button', td, "btn btn-secondary mx-3", "Withdraw")
+    withdrawBtn.addEventListener('click', (e)=> withdraw(localStorage.getItem("selectedIndex")))
+
+}
+
 deleteUser= (usersData, id, tr) =>{
     newData = usersData.filter(u=> u.accNum != id)
     setDataToStorage(newData)
      drawItems()
 }
 
+show=(user, index)=>{
+    localStorage.setItem('selectedIndex', index)
+    localStorage.setItem("user", JSON.stringify(user))
+    window.location.replace("single.html")
+}    
 
 
-// edit=( index)=>{
-//     localStorage.setItem('editIndex', index)
-//     window.location.replace("edit.html")
-// }
-
-// const editForm= document.querySelector("#editForm")
-// if(editForm){
-//     const usersData=readDataFromStorage()
-//     let id = localStorage.getItem('editIndex')
-//     let user = usersData[id]
-//     userMainHeads.forEach(head => {
-//      editForm.elements[head.name][head.dataStore]=user[head.name]
-//     }); 
-//     editForm.addEventListener('submit', (e)=>{
-//         e.preventDefault()
-//         userMainHeads.forEach(head => {
-//             if(!head.isDefault) 
-//             usersData[id][head.name]=editForm.elements[head.name][head.dataStore]
-//         });
-//         console.log(usersData)
-//        setDataToStorage(usersData)
-//        window.location.replace("index.html")
-//     })  
-// }
 
 deposit=( index)=>{
     localStorage.setItem('transactionIndex', index)
