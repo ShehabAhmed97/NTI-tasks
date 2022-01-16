@@ -1,0 +1,29 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <h2>Add new customer</h2>
+    <form method="post">
+        <div class="mb-3">
+            <input class="form-control" name="name" placeholder="Enter customer name" value="{{customer.name}}">
+            {{#if errors.name}}
+                <div class="text-danger"><span>{{errors.name}}</span></div>
+            {{/if}}
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="address" placeholder="Enter customer address" value="{{customer.address}}">
+            {{#if errors.address}}
+                <div class="text-danger"><span>{{errors.address}}</span></div>
+            {{/if}}
+        </div>
+                <div class="mb-3">
+            <input class="form-control" name="phone" placeholder="Enter customer phone" value="{{customer.phone}}">
+            {{#if errors.phone}}
+                <div class="text-danger"><span>{{errors.phone}}</span></div>
+            {{/if}}
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Add</button>
+        </div>
+    </form>
+</section>
+{{>footer}}

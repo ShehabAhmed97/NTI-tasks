@@ -1,0 +1,46 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <div class="d-flex justify-content-end mb-3">
+        <a href="/add" class="btn btn-primary mx-3">Add new customer</a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Account number</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Balance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#if isEmpty}}
+                <tr>
+                    <td colspan="6" class="bg-danger text-white ">No Customers Yet</td>
+                </tr>
+                {{else}}
+                {{#each customers}}
+                <tr>
+                    <td>{{this._id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.address}}</td>
+                    <td>{{this.phone}}</td>
+                    <td>{{this.balance}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="/single/{{this._id}}">Show</a>
+                        <a class="btn btn-dark" href="/deposit/{{this._id}}">Deposit</a>
+                        <a class="btn btn-secondary" href="/withdraw/{{this._id}}">Withdraw</a>
+                        <a class="btn btn-danger" href="/delete/{{this._id}}">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+
+                {{/if}}
+            </tbody>
+        </table>
+    </div>
+</section>
+{{>footer}}

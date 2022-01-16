@@ -1,0 +1,48 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <div class="border border-3 border-primary p-4">
+        {{#if isNotFound}}
+            <div class="alert alert-danger">
+                No such customer
+            </div>        
+        {{else}}
+        <h5>Customer: {{customer.name}}</h5>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Account number</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Balance</th>
+                        <th>transactions</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>{{customer._id}}</td>
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.balance}}</td>
+
+                    <td>
+                        {{#each customer.transactions}}
+                            {{this.action}} : {{this.amount}} <br>
+                        {{/each}}
+                    </td>
+
+                    <td>
+                        <a class="btn btn-dark" href="/deposit/{{customer._id}}">Deposit</a>
+                        <a class="btn btn-secondary" href="/withdraw/{{customer._id}}">Withdraw</a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        {{/if}}
+    </div>
+</section>
+{{>footer}}
