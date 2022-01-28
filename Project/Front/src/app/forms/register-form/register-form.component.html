@@ -1,0 +1,55 @@
+<section class="my-4 container">
+    <form #addUser="ngForm" (ngSubmit)="handleRegister(addUser)">
+        <div class="mb-3">
+            <input class="form-control" name="name" ngModel placeholder="name"
+            #name="ngModel"
+            required minlength="3" maxlength="20"
+            >
+            <div class="mt-2 alert alert-danger"
+             *ngIf="name.invalid && (name.touched || addUser.submitted)">
+                <p *ngIf="name.errors?.['required']">Name is required</p>
+                <p *ngIf="name.errors?.['minlength']">Name must be between 3 and 20 characters</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="age" #age="ngModel" ngModel placeholder="age" type="number" min="16" required>
+            <div class="mt-2 alert alert-danger"
+            *ngIf="age.invalid && (age.touched || addUser.submitted)">
+               <p *ngIf="age.errors?.['required']">Age is required</p>
+               <p *ngIf="age.errors?.['min']">Age must be above 16</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="password" #password="ngModel" ngModel placeholder="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,64}$" type="password"> 
+            <div class="mt-2 alert alert-danger"
+                *ngIf="password.invalid && (password.touched || addUser.submitted)">
+               <p *ngIf="password.errors?.['required']">password is required</p>
+               <ul *ngIf="password.errors?.['pattern']">
+                    <li>Min character = 6</li>
+                    <li>Max character = 64</li>
+                    <li>Min 1 lowercase character</li>
+                    <li> Min 1 uppercase character</li>
+                    <li>Min 1 number</li>
+                    <li>Min 1 special characters</li>
+               </ul>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="email" #email="ngModel" ngModel placeholder="email" email required>
+            <div class="mt-2 alert alert-danger"
+            *ngIf="email.invalid && (email.touched || addUser.submitted)">
+               <p *ngIf="email.errors?.['required']">Email is required</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="address" #address="ngModel" ngModel placeholder="address" required>
+            <div class="mt-2 alert alert-danger"
+            *ngIf="address.invalid && (address.touched || addUser.submitted)">
+               <p *ngIf="address.errors?.['required']">Address is required</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <div class="row" *ngIf="products.length">
+        <div class="card col col-md-4" *ngFor="let product of products">
+            <img src="http://localhost:3000/{{product['image']}}" height="300" class="card-img-top" alt="{{product['name']}} image">
+            <div class="card-body">
+                <h5 class="card-title">{{product['name']}}</h5>
+                <p class="card-text">Price: {{product['price']}}$</p>
+                <p class="card-text"><small class="text-muted">Brand: {{product['brandName']}}</small></p>
+                <p class="card-text"><small class="text-muted">Categories: <span *ngFor="let category of product['categoryNames']">{{category}} |</span></small></p>
+                <a href="#" class="btn btn-warning">Add to cart</a>
+            </div>
+        </div>    
+    </div>
+</div>

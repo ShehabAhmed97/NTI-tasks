@@ -1,0 +1,723 @@
+{
+	"info": {
+		"_postman_id": "d47d2501-5e3e-4329-ba8c-9e11f07fffff",
+		"name": "ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "brands",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ZARA\",\r\n    \"logo\": \"zaralogo.png\",\r\n    \"categories\": [{\"catId\": \"61e958bc4cca80eacac0316c\"}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/brand/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/brand/all/61e954f214c1259ad76c776e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"all",
+								"61e954f214c1259ad76c776e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/brand/delete/61e94ef5d566a94c182c0670",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"delete",
+								"61e94ef5d566a94c182c0670"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"H&M\",\r\n    \"logo\": \"HMlogo.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/brand/edit/61e954f214c1259ad76c776e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"edit",
+								"61e954f214c1259ad76c776e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Clothes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category/all/61e958bc4cca80eacac0316c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"all",
+								"61e958bc4cca80eacac0316c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category/delete/61e9583b4cca80eacac03167",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"delete",
+								"61e9583b4cca80eacac03167"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mobile\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/category/edit/61e958bc4cca80eacac0316c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"edit",
+								"61e958bc4cca80eacac0316c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category/61e958bc4cca80eacac0316c/brands",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"61e958bc4cca80eacac0316c",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"scarf\",\r\n    \"img\": \"scarfimg.png\",\r\n    \"categories\": [{\"catId\":\"61e958bc4cca80eacac0316c\"}],\r\n    \"brandId\": \"61e954f214c1259ad76c776e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/product/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product/delete/61ea9851646b0e260be84436",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"delete",
+								"61ea9851646b0e260be84436"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product/all/61ea98de646b0e260be84439",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"all",
+								"61ea98de646b0e260be84439"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show by brand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product/bybrand/61e954f214c1259ad76c776e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"bybrand",
+								"61e954f214c1259ad76c776e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product/bycategory/61e958bc4cca80eacac0316c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"bycategory",
+								"61e958bc4cca80eacac0316c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add to cart",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWYwMmZkNDM5MmU1ODVhMjVhNmU5ZDMiLCJpYXQiOjE2NDMyODI4MjR9.OMCfxxPe8de5z_HOGC3q5JYeSyFcEncRE7btIlfy02M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/product/addtocart/61ea9cc7f45edfe2c6b5e81e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"addtocart",
+								"61ea9cc7f45edfe2c6b5e81e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addproductimage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVlZDVjMzFhNDdlMWI5NTE2NzZkN2MiLCJpYXQiOjE2NDMwNDMyODV9.6aQWoCk7INvYFhiPmTHEBAnV63nmncCydDNKjcyHUaU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ziad/Desktop/R.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/product/61ea9cc7f45edfe2c6b5e81e/addimage",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"61ea9cc7f45edfe2c6b5e81e",
+								"addimage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ziad\",\r\n    \"age\": 18,\r\n    \"password\": \"123456\",\r\n    \"email\": \"ziad@gmail.com\",\r\n    \"address\": \"22d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/activate/1643042205445/61eed5c31a47e1b951676d7c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"activate",
+								"1643042205445",
+								"61eed5c31a47e1b951676d7c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ziad@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVlNjE5YjkyOGEyOTQzMTIyOTYyMTQiLCJpYXQiOjE2NDMwMjEwNjd9.ISHyY_enif7BWqYsHal1QupO2vEp7jkGZGFuHYRMnV8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVlZDVjMzFhNDdlMWI5NTE2NzZkN2MiLCJpYXQiOjE2NDMwNDMyODV9.6aQWoCk7INvYFhiPmTHEBAnV63nmncCydDNKjcyHUaU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/admin/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"admin",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout all users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVlZDVjMzFhNDdlMWI5NTE2NzZkN2MiLCJpYXQiOjE2NDMwNDMyODV9.6aQWoCk7INvYFhiPmTHEBAnV63nmncCydDNKjcyHUaU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/admin/logout-all-users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"admin",
+								"logout-all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show own profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVlZDVjMzFhNDdlMWI5NTE2NzZkN2MiLCJpYXQiOjE2NDMwNDMyODV9.6aQWoCk7INvYFhiPmTHEBAnV63nmncCydDNKjcyHUaU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/myProfile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"myProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single-user-profile(As admin)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVlZDVjMzFhNDdlMWI5NTE2NzZkN2MiLCJpYXQiOjE2NDMwNDMyODV9.6aQWoCk7INvYFhiPmTHEBAnV63nmncCydDNKjcyHUaU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/admin/single-user-profile/61ee619b928a294312296214",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"admin",
+								"single-user-profile",
+								"61ee619b928a294312296214"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete my profile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/profile/61eed5c31a47e1b951676d7c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile",
+								"61eed5c31a47e1b951676d7c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user profile (As admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:3000/user/admin/single-user-profile/61ee619b928a294312296214",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"admin",
+								"single-user-profile",
+								"61ee619b928a294312296214"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
