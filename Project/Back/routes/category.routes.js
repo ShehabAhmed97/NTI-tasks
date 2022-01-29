@@ -2,11 +2,11 @@ const router = require('express').Router()
 const categoryController = require("../app/controller/category.controller")
 const categoryModel = require("../models/category.model")
 
-// const adminAuth = require("../middleware/adminAuth")
+const adminAuth = require("../middlewares/adminAuth")
 
-router.post("/add", categoryController.add)
-router.delete("/delete/:id", categoryController.delete)
-router.post("/edit/:id",categoryController.edit)
+router.post("/add",adminAuth, categoryController.add)
+router.delete("/delete/:id",adminAuth, categoryController.delete)
+router.post("/edit/:id",adminAuth,categoryController.edit)
 router.get("/all/:id", categoryController.showSingle)
 router.get("/all", categoryController.showAll)
 router.get('/:id/brands', async(req,res)=>{
